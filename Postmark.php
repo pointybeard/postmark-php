@@ -53,11 +53,11 @@ class Mail_Postmark
 	/**
 	* Initialize
 	*/
-	public function __construct()
+	public function __construct($api_key=NULL, $from_name=NULL, $from_address=NULL)
 	{
-		$this->_default('POSTMARKAPP_MAIL_FROM_NAME', null);
-		$this->_default('POSTMARKAPP_MAIL_FROM_ADDRESS', null);
-		$this->_default('POSTMARKAPP_API_KEY', null);
+		$this->_default('POSTMARKAPP_MAIL_FROM_NAME', $from_name);
+		$this->_default('POSTMARKAPP_MAIL_FROM_ADDRESS', $from_address);
+		$this->_default('POSTMARKAPP_API_KEY', $api_key);
 		$this->from(POSTMARKAPP_MAIL_FROM_ADDRESS, POSTMARKAPP_MAIL_FROM_NAME)->messageHtml(null)->messagePlain(null);
 	}
 	
